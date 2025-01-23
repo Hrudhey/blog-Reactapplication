@@ -12,7 +12,7 @@ const Home = () => {
 
 
    useEffect(()=>{
-      axiosInstance.get('/api/blog/').then((res)=>{
+      axiosInstance.get('/blog/').then((res)=>{
          setData(res.data);
         
 
@@ -32,7 +32,7 @@ const Home = () => {
 // }
 
 function delete_blog(id) {
-  axiosInstance.delete(`/api/blog/delete/${id}`).then((res) => {
+  axiosInstance.delete(`/blog/delete/${id}`).then((res) => {
       alert(res.data.message);
       // Filter out the deleted blog from the state
       setData((prevData) => prevData.filter((blog) => blog._id !== id));
